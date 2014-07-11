@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="en" ng-app="tb">
+<head>
+    <meta charset="utf-8">
+    <title>Tracking bugs</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css">
+ 
+    <script src="~/Scripts/angular.js"></script>
+
+    <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/methods.js"></script>
+    <script src="~/Scripts/myDirectives.js"></script>
+    <script src="~/Scripts/filter.js"></script>
+
+</head>
+<body ng-controller="SettingsController">
+    filter: 
+    <select ng-model="search.WhoReported">
+        <option></option>
+        <option ng-repeat="bug in bugs| selectionByName ">{{bug.WhoReported}}</option>
+    </select>
+    <div>
+        <table class="table table-hover">
+            <tr>
+                <th>Id</th>
+                <th>Who reported</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+
+            <tr ng-repeat="bug in bugs| filter:search">
+                <td>{{bug.Id}}</td>
+                <td>
+
+                    <input type="text" ng-model="bug.WhoReported"
+                        ng-blur="changeBug(bug.Id,bug.Date, bug.Status, bug.WhoReported)" />
+                </td>
+                <td>
+
+                    <input type="date" ng-model="bug.Date"
+                        ng-blur="changeBug(bug.Id,bug.Date, bug.Status,bug.WhoReported)" />
+                </td>
+                <td>
+                    <input type="text" ng-model="bug.Status" ng-blur="changeBug(bug.Id,bug.Date, bug.Status,bug.WhoReported)" /></td>
+                <td>[<a href="" ng-click="removeBug(bug.Id)">X</a>]</td>
+            </tr>
+        </table>
+    </div>
+    [<a href="" ng-click="addBug()">Add</a>]
+
+</body>
+</html>

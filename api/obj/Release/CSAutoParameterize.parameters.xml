@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-api-20140709110720;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-api-20140709110720.mdf" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="E:\\программирование\\itransition\\TrackingBugs\\TrackingBugs\\api\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
-  </parameter>
-  <parameter name="api.Models.BugContext-Web.config Connection String" description="api.Models.BugContext Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="api.Models.BugContext_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="E:\\программирование\\itransition\\TrackingBugs\\TrackingBugs\\api\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='api.Models.BugContext']/@connectionString" />
-  </parameter>
-</parameters>

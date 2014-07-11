@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingBug", "api\TrackingBug.csproj", "{F46311E7-D5B5-4E6F-8DFA-4AF4182E3293}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "Frontend\Frontend.csproj", "{07D23382-092F-4B54-950B-9358A13778B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend2", "Backend2\Backend2.csproj", "{FEAC7282-5174-4010-8895-FA6DF4201189}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F46311E7-D5B5-4E6F-8DFA-4AF4182E3293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F46311E7-D5B5-4E6F-8DFA-4AF4182E3293}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F46311E7-D5B5-4E6F-8DFA-4AF4182E3293}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F46311E7-D5B5-4E6F-8DFA-4AF4182E3293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07D23382-092F-4B54-950B-9358A13778B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D23382-092F-4B54-950B-9358A13778B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D23382-092F-4B54-950B-9358A13778B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D23382-092F-4B54-950B-9358A13778B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEAC7282-5174-4010-8895-FA6DF4201189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEAC7282-5174-4010-8895-FA6DF4201189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEAC7282-5174-4010-8895-FA6DF4201189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEAC7282-5174-4010-8895-FA6DF4201189}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
