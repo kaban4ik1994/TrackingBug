@@ -1,0 +1,34 @@
+﻿<div class="container">
+
+    <button class="btn btn-info" ng-click="open()">Add</button>
+
+    <pagination total-items="totalItems.CountBugs" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Who reported</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="bug in bugs ">
+
+            <td>{{bug.Id}}</td>
+            <td>
+                {{bug.WhoReported}}
+            </td>
+            <td>
+                {{bug.Date |date:'yyyy-MM-dd'}}
+            </td>
+            <td>
+                {{bug.Status}}
+            </td>
+            <td><button class="btn btn-warning" ng-click="open(bug)">Edit</button></td>
+
+            <td><button class="btn btn-danger" ng-click="delete(bug)">Delete</button></td>
+        </tr>
+    </table>
+
+</div>
