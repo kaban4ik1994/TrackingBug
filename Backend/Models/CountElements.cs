@@ -8,5 +8,6 @@ namespace Backend.Models
     public class CountElements
     {
         public int CountBugs { get; set; }
+        public List<string> ParametersForAFilter { get; set; } 
     }
 }

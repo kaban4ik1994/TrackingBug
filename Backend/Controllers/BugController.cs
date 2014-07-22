@@ -22,18 +22,20 @@ namespace Backend.Controllers
         public IEnumerable<Bug> Get(int offset, int limit, string filter = "")
         {
             var result = new List<Bug>();
-            if (offset + limit < _db.Bugs.Count())
+            var temp = _db.Bugs.Where(x => x.WhoReported == filter ||string.IsNullOrEmpty(filter));
+
+            if (offset + limit < temp.Count())
             {
                 for (var i = offset; i < (offset + limit); i++)
                 {
-                    result.Add(_db.Bugs.ToList().ElementAt(i));
+                    result.Add(temp.ToList().ElementAt(i));
                 }
             }
             else
             {
-                for (var i = offset; i < _db.Bugs.Count(); i++)
+                for (var i = offset; i < temp.Count(); i++)
                 {
-                    result.Add(_db.Bugs.ToList().ElementAt(i));
+                    result.Add(temp.ToList().ElementAt(i));
                 }
             }
 
@@ -45,10 +47,16 @@ namespace Backend.Controllers
             return _db.Bugs.ToList().Find(x => x.Id == id);
         }
 
-        public CountElements GetCountBugs()
+        public CountElements GetParams(string filter="")
         {
-            var count = _db.Bugs.Count();
-            return new CountElements { CountBugs = count };
+            var count = _db.Bugs.Count(x => x.WhoReported==filter || string.IsNullOrEmpty(filter));
+            var parameters = new List<string>();
+            foreach (var bug in _db.Bugs.ToList().Where(bug => !parameters.Contains(bug.WhoReported)))
+            {
+                parameters.Add(bug.WhoReported);
+            }
+
+            return new CountElements { CountBugs = count, ParametersForAFilter = parameters};
         }
 
 

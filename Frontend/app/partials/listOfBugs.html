@@ -2,7 +2,21 @@
 
     <button class="btn btn-info" ng-click="open()">Add</button>
 
-    <pagination total-items="totalItems.CountBugs" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+
+    <div class="btn-group" dropdown is-open="status.isopen">
+        <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+            {{selectedItem}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a ng-click="chooseItem('')">Empty</a></li>
+            <li ng-repeat="param in parameters.ParametersForAFilter">
+                <a ng-click="chooseItem(param)">{{param}}</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <pagination total-items="parameters.CountBugs" ng-model="currentPage" ng-change="pageChanged()"></pagination>
 
     <table class="table table-hover">
         <tr>
